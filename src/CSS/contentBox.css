@@ -1,0 +1,113 @@
+.contentBox_component{
+    width: 94%;
+    height: 90vh;
+}
+/* ////////////// FILTERS BUTTONS COMPONENT ////////////////// */
+.filterButtons_component{
+    height: 10%;
+
+    & > button{
+        background-color: rgb(43, 42, 42);
+        color: white;
+        border: none;
+        padding: 0.7rem;
+        border-radius: 0.5rem;
+        font-size: 1vw;
+        font-weight: 500;
+        margin-right: 0.8rem;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* ////////////// VIDEOS BOX COMPONENT ////////////////// */
+.videosBox_component{
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    justify-content: space-between;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    padding: 2% 2% 0 0;
+}
+.videosBox_component::-webkit-scrollbar{
+    display: none;
+}
+.video_container{
+    width: 32%;
+    height: 57%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 3%;
+
+    & span, & .channel_name{
+        color: white;
+        font-size: 0.96rem;
+        font-weight: 400;
+        color: rgb(168, 167, 167);
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+.thumbnail_box{
+    height: 73%;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    & > img{
+        width: 100%;
+    }
+}
+.video_content_box{
+    display: flex;
+    width: 100%;
+}
+.channel_icon{
+    width: 15%;
+
+    & > img{
+        width: 75%;
+        border-radius: 50%;
+    }
+}
+.video_details_box{
+    width: 85%;
+}
+.video_title{
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1%;
+}
+.empty_videoBox_text{
+    margin: auto;
+    text-align: center;
+    color: rgb(136, 133, 133);
+    font-size: 4vh;
+}
+
+/* ///////////  MEDIA QUERIES //////////// */
+@media (max-width: 1024px){
+
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 640px){
+
+}
+@media (max-width: 475px){
+
+}
+@media (max-height: 450px) and (orientation: landscape){
+
+}

@@ -1,0 +1,180 @@
+.comments_component{
+    margin-top: 20px;
+
+    & > p{
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+.addComment_input{
+    background-color: transparent;
+    width: 100%;
+    margin: 30px 0;
+    padding: 10px 0;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-bottom: solid rgb(48, 47, 47) 1px;
+
+    &:focus{
+        border-bottom: solid white 2px;
+    }
+}
+.cancel_addComment_buttons_box{
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+
+    & > button{
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: 500;
+        border: none;
+        border-radius: 1.5rem;
+    }
+}
+.cancel_comment:hover{
+        cursor: pointer;
+        background-color: rgb(39, 38, 38);
+}
+.cancel_comment{
+    background-color: transparent;
+    color: white;
+}
+.add_comment{
+    color: rgb(102, 100, 100);
+    margin-left: 10px;
+}
+/* ///// adding comment input conditional classes ////////// */
+.user_typing{
+    background-color: rgb(8, 148, 167);
+    color: black;
+
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(22, 189, 211);
+    }
+}
+.user_not_typing{
+    background-color: rgb(22, 22, 22);
+}
+/* //////////////////////////////////////////////////// */
+.comment_container{
+    margin-top: 20px;
+    color: white;
+    display: flex;
+}
+.user_icon{
+    height: 8vh;
+    width: 8vh;
+    margin-right: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    background-color: rgb(5, 107, 5);
+}
+.comment_username_timestamp{
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+.comment_timestamps{
+    color: rgb(117, 114, 114);
+}
+.comment_text{
+    font-size: 1rem;
+}
+.comment_like_dislike_reply_btns{
+    width: 20vw;
+    margin-top: 10px;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > .comment_like_dislike_reply_buttons_box{
+        width: 11vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > p{
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            border-radius: 1.5rem;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(34, 33, 33);
+        }
+    }
+
+    }
+
+    & > .comment_like_dislike_reply_buttons_box > button{
+        background-color: transparent;
+        border: none;
+        height: 6vh;
+        width: 6vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        & > img{
+            height: 60%;
+        }
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(34, 33, 33);
+        }
+    }
+}
+.edit_and_delete_user_comment{
+    height: 100%;
+    width: 6vw;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+
+    & > button{
+        height: 6vh;
+        width: 6vh;
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgb(44, 44, 44);
+        }
+
+        & > img{
+            height: 55%;
+        }
+    }
+}
+
+/* ///////////  MEDIA QUERIES //////////// */
+@media (max-width: 1024px){
+
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 640px){
+
+}
+@media (max-width: 475px){
+
+}
+@media (max-height: 450px) and (orientation: landscape){
+
+}

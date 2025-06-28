@@ -1,0 +1,258 @@
+.myChannel_component{
+    display: flex;
+}
+
+.channel_content_container{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.channel_content_container::-webkit-scrollbar{
+    display: none;
+}
+.channel_banner_box{
+    position: relative;
+    width: 75vw;
+    min-height: 30vh;
+    border-radius: 1.5rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    color: rgba(150, 70, 5, 0.781);
+    font-size: 4rem;
+    font-weight: 100;
+    overflow: hidden;
+    /* background: repeating-linear-gradient(-45deg, #ff9a9e,#ff9a9e 20px,#fad0c4 20px,#fad0c4 40px); */
+
+    & > img{
+        height: 100%;
+        width: 100%;
+    }
+}
+.channel_banner_text{
+    position: absolute;
+    margin-left: 5%;
+}
+.channel_details_box{
+    width: 75vw;
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+}
+.channel_logo_box{
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgb(255, 101, 12) 100%, rgb(255, 150, 80) 0%);
+    font-size: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.channel_name_desc_box{
+    width: 61.5vw;
+    height: 25vh;
+}
+.myChannel_name{
+    font-size: 2.5rem;
+    color: rgb(235, 230, 230);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.myChannel_handle_subs_totalVidoes{
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: white;
+    margin-bottom: 12px;
+}
+.myChannel_subsribers, .myChannel_totalVidoes{
+    color: rgba(255, 255, 255, 0.568);
+}
+.myChannel_description{
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.568);
+}
+.myChannel_manageChannel_btns{
+
+    & > button{
+        border: none;
+        background-color: rgb(41, 40, 40);
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: white;
+        margin-right: 10px;
+        border-radius: 1.5rem;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(56, 55, 55);
+        }
+
+    }
+}
+.channel_buttons_box{
+    position: sticky;
+    top: 0;
+    background-color: black;
+    min-height: 8vh;
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    border-bottom: solid rgb(78, 78, 78) 1px;
+}
+.channel_buttons{
+    width: 75vw;
+    height: 100%;
+
+    & > button{
+        height: 100%;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: transparent;
+        border: none;
+        color: rgb(207, 206, 206);
+        margin-right: 20px;
+        padding: 0 8px;
+
+        &:hover{
+            cursor: pointer;
+            border-bottom: solid 2px rgb(207, 206, 206);
+        }
+
+        &:focus{
+            color: white;
+            border-bottom: solid 2px white;
+        }
+    }
+}
+.channel_videos_button{
+    color: white !important;
+    border-bottom: solid 2px white !important;
+}
+/* ///////////////// My Channel Vidoes ///////////////// */
+.channel_videos_container{
+    width: 75vw;
+    min-height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.channel_videos_container::-webkit-scrollbar{
+    display: none;
+}
+.myChannel_video_component{
+    width: 24%;
+    height: 38%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 3%;
+
+    & span, & .channel_name{
+        color: white;
+        font-size: 0.96rem;
+        font-weight: 400;
+        color: rgb(168, 167, 167);
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+.myChannel_thumbnail_box{
+    height: 73%;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    & > img{
+        width: 100%;
+    }
+}
+.myChannel_video_content_box{
+    display: flex;
+    width: 100%;
+}
+.myChannel_video_details_box{
+    width: 100%;
+    margin-top: 10px;
+}
+.myChannel_video_title{
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.myChannel_views_and_edit_delete_video_box{
+    display: flex;
+    justify-content: space-between;
+
+    & span{
+        font-size: 0.8rem;
+    }
+
+    & > div > button{
+        background-color: rgb(36, 35, 35);
+        border: none;
+        color: white;
+        padding: 4px 10px;
+        font-size: 0.7rem;
+        border-radius: 0.8rem;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(56, 56, 56);
+        }
+
+        &:active{
+            background-color: rgb(77, 76, 76);
+        }
+    }
+}
+.myChannel_addVideos_btn{
+    background-color: rgb(61, 60, 60);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    &:active{
+        background-color: rgb(105, 105, 105);
+    }
+}
+
+/* ///////////  MEDIA QUERIES //////////// */
+@media (max-width: 1024px){
+
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 640px){
+
+}
+@media (max-width: 475px){
+
+}
+@media (max-height: 450px) and (orientation: landscape){
+
+}

@@ -1,0 +1,120 @@
+.videoPlayer_component{
+    background-color: black;
+}
+.videoPlayer_video_box{
+    width: 100vw;
+    height: 70vh;
+    
+
+    & > iframe{
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+.videoPlayer_details_comments_box{
+    width: 65vw;
+    padding: 1% 2%; 
+}
+.videoPlayer_title{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+}
+.videoPlayer_channel_icon_name_like{
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+
+    & > div{
+        display: flex;
+        align-items: center;
+    }
+}
+.videoPlayer_channel{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+
+    & > img{
+        height: 75%;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    & > button{
+        background-color: rgb(255, 255, 255);
+        padding: 10px 15px;
+        color: black;
+        border: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border-radius: 1.4rem;
+        margin-left: 15px;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.815);
+        }
+    }
+}
+.like_dislike_btns_box{
+    height: 60%;
+    width: 12vw;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    background-color: rgba(34, 34, 34, 0.726);
+
+    & > div{
+        height: 60%;
+        padding: 0 10px;
+    }
+
+    & > div > img{
+        height: 100%;
+    }
+}
+.like_btn_box{
+    width: 70%;
+    color: white;
+    display: flex;
+    align-items: center;
+    border-right: solid rgba(255, 255, 255, 0.288) 1px;
+
+    & > img{
+        margin-right: 15px;
+    }
+}
+.dislike_btn_box{
+    width: 30%;
+}
+.videoPlayer_description{
+    color: white;
+    background-color: rgb(49, 49, 49);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+
+/* ///////////  MEDIA QUERIES //////////// */
+@media (max-width: 1024px){
+
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 640px){
+
+}
+@media (max-width: 475px){
+
+}
+@media (max-height: 450px) and (orientation: landscape){
+
+}

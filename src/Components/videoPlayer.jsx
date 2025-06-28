@@ -1,0 +1,80 @@
+import likeIcon from '../assets/icons/like.png';
+import dislikeIcon from '../assets/icons/dislike.png';
+import Comments from './comments';
+import { useLocation, useParams } from 'react-router-dom';
+import SliderSidebar from './sliderSidebar.jsx';
+import { useState, useEffect } from 'react';
+
+function VideoPlayer({isVideoPlayerOn, isUserLoggedIn}){
+    // const location = useLocation();
+    // const video = location.state?.video;
+    // const [videos, setVideos] = useState([]);
+    const [video, setVideo] = useState(null);
+
+    const params = useParams();
+    // const video = videos.find(video => video._id == params.id);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          // const response = await fetch("http://localhost:5050/videos");
+          const response = await fetch(`http://localhost:5050/video/${params.id}`);
+          const data = await response.json(); // fixed: added space between `await` and `response`
+          // setVideos(data);
+          setVideo(data)
+          console.log(data);
+        } catch (err) {
+          console.log(err.message);
+        }
+      };
+    
+      fetchData();
+    }, []);
+
+    if (!video) {
+      return <div className="loading">Loading video...</div>;
+    }
+
+    return (
+        <div className="videoPlayer_component">
+          <div className={`videoPlayer_sliderSidebar ${isVideoPlayerOn ? 'moveSlider' : ''}`}>
+            <SliderSidebar isVideoPlayerOn={isVideoPlayerOn} isUserLoggedIn={isUserLoggedIn}/>
+          </div>
+
+          <div className="videoPlayer_video_box">
+            <iframe src={video?.videoUrl}></iframe>
+          </div>
+
+          <div className="videoPlayer_details_comments_box">
+            <p className="videoPlayer_title">{video?.title}</p>
+
+            <div className="videoPlayer_channel_icon_name_like">
+              <div className="videoPlayer_channel">
+                 <img src={video?.channelIcon} alt="channel icon"/>
+                 <p>{video?.uploader}</p>
+                 <button className="videoPlayer_subscribe_btn">Subscribe</button>
+              </div>
+              <div className="videoPlayer_like_dislike_buttons">
+                 <div className="like_dislike_btns_box">
+                   <div className="like_btn_box">
+                     <img src={likeIcon} alt="like" />
+                     <p className="videoPlayer_likes">{video?.likes.toString().slice(0, 1)}K</p>
+                   </div>
+                   <div className="dislike_btn_box">
+                     <img src={dislikeIcon} alt="dislike" />
+                   </div>
+                 </div>
+              </div>
+            </div>
+
+            <p className="videoPlayer_description">{video?.description}</p>
+
+            <Comments comments={video?.comments} videoId={video?._id}/>
+
+          </div>
+
+        </div>
+    )
+}
+
+export default VideoPlayer;

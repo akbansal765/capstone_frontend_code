@@ -1,0 +1,177 @@
+.header_component{
+    height: 10vh;
+    display: flex;
+    padding: 0 2%;
+    justify-content: space-between;
+}
+.menu_and_logo_box{
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    & > button{
+        height: 60%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 8px;
+        border-radius: 50%;
+
+        & > img{
+            height: 100%;
+        }
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(46, 45, 45);
+        }
+
+        &:active{
+            background-color: rgb(75, 73, 73);
+        }
+    }
+
+    & > img{
+        height: 55%;
+        margin-left: 2vw;
+    }
+}
+.search_bar_box{
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    & > .searchBar{
+        width: 50vw;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        & > input{
+            width: 90%;
+            height: 65%;
+            border: rgb(73, 72, 72) solid 1px;
+            background-color: rgba(20, 20, 20, 0.507);
+            border-radius: 3rem 0 0 3rem;
+            padding-left: 3%;
+            outline: none;
+            color: white;
+            font-size: 1rem;
+
+            &::placeholder{
+                font-size: 1.2rem;
+            }
+
+            &:focus{
+                border: solid 1px rgb(18, 86, 187);
+            }
+        }
+
+        & > button{
+            width: 10%;
+            height: 65%;
+            border: none;
+            border: rgb(73, 72, 72) solid 1px;
+            border-left: none;
+            background-color: rgb(32, 32, 32);
+            border-radius: 0 3rem 3rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & > img{
+                height: 50%;
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    & > .mic_box{
+       height: 7vh;
+       width: 7vh;
+       margin-left: 1.3vw;
+       border-radius: 50%;
+       background-color: rgb(32, 32, 32);
+       display: flex;
+       justify-content: center;
+       align-items: center;
+
+       & > img{
+        height: 40%;
+       }
+
+       &:hover{
+        cursor: pointer;
+        background-color: rgb(58, 57, 57);
+       }
+    }
+}
+.login_signup_box{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & > button{
+        background-color: transparent;
+        height: 65%;
+        display: flex;
+        align-items: center;
+        border: rgb(85, 84, 84) solid 1px;
+        padding: 0 10px 0 10px;
+        border-radius: 3rem;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(43, 42, 42);
+            border: solid 1px black;
+       }
+
+        &:active{
+            background-color: rgb(87, 85, 85);
+        }
+
+        & > img{
+            height: 60%;
+        }
+
+        & > p{
+            font-size: 1rem;
+            color: white;
+            margin-left: 1vw;
+            font-weight: 500;
+        }
+    }
+}
+.createChannel_btn{
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 15px !important;
+}
+.welcome_message_after_login{
+    color: white;
+    padding: 10px 15px;
+    border-radius: 2rem;
+    border: solid rgba(255, 255, 255, 0.192) 2px;
+}
+
+/* ///////////  MEDIA QUERIES //////////// */
+@media (max-width: 1024px){
+
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 640px){
+
+}
+@media (max-width: 475px){
+
+}
+@media (max-height: 450px) and (orientation: landscape){
+
+}

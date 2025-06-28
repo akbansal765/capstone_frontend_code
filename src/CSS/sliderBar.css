@@ -1,0 +1,161 @@
+.sliderSider_component{
+    width: 25vw;
+    height: 90vh;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.sliderSider_component::-webkit-scrollbar{
+    display: none;
+}
+.first_box_home_shorts_subsriptions{
+    width: 90%;
+    padding-left: 8%;
+    padding-bottom: 4%;
+    border-bottom: solid 1px rgb(54, 54, 54);
+}
+.first_box_home_shorts_subsriptions > button{
+        width: 85%;
+        height: 6.5vh;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        padding: 0 10px 0 10px;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(43, 42, 42);
+        }
+
+}
+.first_box_home_shorts_subsriptions > button > img{
+    height: 50%;
+    margin-right: 10%;
+}
+.second_box_you_history{
+    width: 90%;
+    padding-top: 4%;
+    padding-left: 8%;
+    padding-bottom: 4%;
+    border-bottom: solid 1px rgb(54, 54, 54);
+}
+.second_box_you_history > button{
+    width: 85%;
+    height: 6.5vh;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(43, 42, 42);
+    }
+}
+.second_box_you_history > button > img{
+    height: 50%;
+    margin-right: 10%;
+}
+.sliderBar_profile_button{
+
+    & > p{
+        font-size: 1.1rem;
+    }
+
+    & > img{
+        height: 40% !important;
+        margin-left: 7%;
+    }
+}
+.copyright_text{
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.288);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+.slider_home_button:active{
+    background-color: rgb(80, 78, 78) !important;
+}
+.thirdBox_myChannels{
+    width: 90%;
+    padding: 4% 0 4% 8%;
+    border-bottom: solid 1px rgb(54, 54, 54);
+
+    & > button{
+        width: 85%;
+        height: 6.5vh;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        padding: 0 10px 0 10px;
+
+        & > img{
+            height: 50% !important;
+            margin-right: 9%;
+        }
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(43, 42, 42);
+        }
+    }
+
+    & > p{
+        color: white;
+        margin-left: 4%;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 4%;
+    }
+}
+.myChannels_text_not_login{
+    font-size: 1rem !important;
+    font-weight: 200 !important;
+    margin-top: 20px;
+    color: rgb(143, 142, 142) !important;
+}
+/* /////////////// sliderbar component in videoPlayer component /////////////////// */
+.videoPlayer_sliderSidebar{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.952);
+    transition: 0.5s;
+    border-bottom: solid 1px rgb(80, 79, 79);
+    border-right: solid 1px rgb(80, 79, 79);
+    transform: translateX(-100%);
+}
+/* /////////// conditional classes //////////// */
+.moveSlider{
+    transform: translateX(0);
+}
+
+/* ///////////  MEDIA QUERIES //////////// */
+@media (max-width: 1024px){
+
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 640px){
+
+}
+@media (max-width: 475px){
+
+}
+@media (max-height: 450px) and (orientation: landscape){
+
+}
