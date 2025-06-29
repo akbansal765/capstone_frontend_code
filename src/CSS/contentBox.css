@@ -97,17 +97,138 @@
 
 /* ///////////  MEDIA QUERIES //////////// */
 @media (max-width: 1024px){
+    .contentBox_component{
+        height: 93vh;
+    }
+    .filterButtons_component{
+    & > button{
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    }
+    .video_container{
+        width: 49%;
+        height: 30%;
+        margin-bottom: 5%;
 
+        & span, & .channel_name{
+            font-size: 1.1rem;
+        }
+    }
+    .video_title{
+        font-size: 1.2rem;
+    }
+    .empty_videoBox_text{
+        font-size: 1.5rem;
+    }
 }
 @media (max-width: 768px){
+    .contentBox_component{
+        height: 93vh;
+    }
+    .filterButtons_component{
+    & > button{
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    }
+    .video_container{
+        width: 47%;
+        height: 31%;
+        margin-bottom: 5%;
 
-}
-@media (max-width: 640px){
-
+        & span, & .channel_name{
+            font-size: 1rem;
+        }
+    }
+    .video_title{
+        font-size: 1.1rem;
+    }
+    .empty_videoBox_text{
+        font-size: 1.2rem;
+    }
 }
 @media (max-width: 475px){
+    .contentBox_component{
+        height: 93vh;
+    }
+    .filterButtons_component{
+        & > button{
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.4rem;
+            font-weight: 500;
+            margin-right: 5px;
+        }
+    }
+    .video_container{
+        width: 95%;
+        height: 45%;
+        margin-bottom: 8%;
 
+        & span, & .channel_name{
+            font-size: 0.7rem;
+        }
+    }
+    .video_title{
+        font-size: 0.9rem;
+    }
+    .empty_videoBox_text{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 1024px) and (max-height: 600px){
+    .contentBox_component{
+        height: 93vh;
+    }
+    .filterButtons_component{
+        & > button{
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+        }
+    }
+    .video_title{
+        font-size: 0.9rem;
+    }
+    .video_container{
+        width: 32%;
+        height: 49%;
+        margin-bottom: 4%;
+
+        & span, & .channel_name{
+            font-size: 0.9rem;
+        }
+    }
 }
 @media (max-height: 450px) and (orientation: landscape){
+    .contentBox_component{
+        height: 86vh;
+    }
+    .filterButtons_component{
+        & > button{
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.5rem;
+            margin-right: 5px;
+        }
+    }
+    .video_title{
+        font-size: 0.8rem;
+    }
+    .video_container{
+        width: 49%;
+        height: 75%;
 
+        & span, & .channel_name{
+            font-size: 0.7rem;
+        }
+    }
 }

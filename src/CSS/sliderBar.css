@@ -145,17 +145,169 @@
 
 /* ///////////  MEDIA QUERIES //////////// */
 @media (max-width: 1024px){
+    .sliderSider_component{
+        width: 30vw;
+        height: 93vh;
+    }
+    .first_box_home_shorts_subsriptions{
+        padding-left: 4%;
+    }
+    .first_box_home_shorts_subsriptions > button{
+        height: 6vh;
+        font-size: 1rem;
+    }
+    .second_box_you_history{
+        width: 40vw;
+        padding-left: 4%;
+    }
+    .second_box_you_history > button{
+        height: 6vh;
+        font-size: 1rem;
+    }
+    .sliderBar_profile_button{
+        & > p{
+            font-size: 1.5rem;
+        }
+    }
+    .thirdBox_myChannels{
+        & > button{
+            height: 6vh;
+            font-size: 1rem;
+        }
 
+        & > p{
+            font-size: 1.2rem;
+        }
+    }
+    .myChannels_text_not_login{
+        font-size: 1rem !important;
+        margin-top: 15px;
+    }
+    .copyright_text{
+        font-size: 0.8rem;
+    }
 }
 @media (max-width: 768px){
+    .sliderSider_component{
+        width: 30vw;
+        height: 93vh;
+    }
+    .first_box_home_shorts_subsriptions{
+        padding-left: 4%;
+    }
+    .first_box_home_shorts_subsriptions > button{
+        height: 5vh;
+        font-size: 0.8rem;
+    }
+    .second_box_you_history{
+        width: 40vw;
+        padding-left: 4%;
+    }
+    .second_box_you_history > button{
+        height: 5vh;
+        font-size: 0.8rem;
+    }
+    .sliderBar_profile_button{
+        & > p{
+            font-size: 1rem;
+        }
+    }
+    .thirdBox_myChannels{
+        & > button{
+            height: 5vh;
+            font-size: 0.8rem;
+        }
 
-}
-@media (max-width: 640px){
-
+        & > p{
+            font-size: 1rem;
+        }
+    }
+    .myChannels_text_not_login{
+        font-size: 0.8rem !important;
+        margin-top: 10px;
+    }
+    .copyright_text{
+        font-size: 0.6rem;
+    }
 }
 @media (max-width: 475px){
+    .sliderSider_component{
+        width: 35vw;
+        height: 93vh;
+    }
+    .first_box_home_shorts_subsriptions{
+        padding-left: 0;
+    }
+    .first_box_home_shorts_subsriptions > button{
+        height: 4vh;
+        font-size: 0.5rem;
+    }
+    .second_box_you_history{
+        width: 40vw;
+        padding-left: 0;
+    }
+    .second_box_you_history > button{
+        height: 4vh;
+        font-size: 0.5rem;
+    }
+    .sliderBar_profile_button{
+        & > p{
+            font-size: 0.65rem;
+        }
+    }
+    .thirdBox_myChannels{
 
+        & > button{
+            height: 4vh;
+            font-size: 0.5rem;
+        }
+
+        & > p{
+            font-size: 0.6rem;
+        }
+    }
+    .myChannels_text_not_login{
+        font-size: 0.4rem !important;
+        margin-top: 5px;
+    }
+    .copyright_text{
+        padding: 10px;
+        font-size: 0.4rem;
+    }
 }
 @media (max-height: 450px) and (orientation: landscape){
-
+    .sliderSider_component{
+        width: 25vw;
+        height: 86vh;
+    }
+    .first_box_home_shorts_subsriptions > button{
+        height: 8vh;
+        font-size: 0.7rem;
+    }
+    .second_box_you_history > button{
+        height: 8vh;
+        font-size: 0.7rem;
+    }
+    .sliderBar_profile_button{
+        & > p{
+            font-size: 0.9rem;
+        }
+    }
+    .thirdBox_myChannels{
+        & > button{
+            height: 8vh;
+            font-size: 0.7rem;
+        }
+        & > p{
+            font-size: 0.9rem;
+        }
+    }
+    .myChannels_text_not_login{
+        font-size: 0.6rem !important;
+        margin-top: 5px;
+    }
+    .copyright_text{
+        padding: 15px;
+        font-size: 0.5rem;
+    }
 }

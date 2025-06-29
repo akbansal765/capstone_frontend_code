@@ -104,17 +104,134 @@
 
 /* ///////////  MEDIA QUERIES //////////// */
 @media (max-width: 1024px){
+    .videoPlayer_video_box{
+        height: 50vh;
+    }
+    .videoPlayer_details_comments_box{
+        width: 100vw;
+        padding: 1% 2%; 
+    }
+    .videoPlayer_title{
+        font-size: 2rem;
+    }
+    .videoPlayer_channel_icon_name_like{
+        height: 10vh;
+    }
+    .videoPlayer_channel{
+        font-size: 1.3rem;
+        & > img{
+            margin-right: 25px;
+        }
 
+        & > button{
+            padding: 10px 15px;
+            font-size: 1rem;
+            margin-left: 25px;
+        }
+    }
+    .like_dislike_btns_box{
+        display: none;
+    }
 }
 @media (max-width: 768px){
-
-}
-@media (max-width: 640px){
-
+    .videoPlayer_video_box{
+        height: 50vh;
+    }
+    .videoPlayer_details_comments_box{
+        width: 100vw;
+        padding: 2% 4%; 
+    }
+    .videoPlayer_title{
+        font-size: 1.5rem;
+    }
+    .videoPlayer_channel_icon_name_like{
+        height: 8vh;
+    }
+    .like_dislike_btns_box{
+        display: none;
+    }
 }
 @media (max-width: 475px){
+    .videoPlayer_video_box{
+        height: 30vh;
+    }
+    .videoPlayer_details_comments_box{
+        width: 100vw;
+        padding: 2% 4%; 
+    }
+    .videoPlayer_title{
+        font-size: 1rem;
+    }
+    .videoPlayer_channel_icon_name_like{
+        height: 8vh;
+    }
+    .videoPlayer_channel{
+        font-size: 0.7rem;
+        & > img{
+            margin-right: 5px;
+        }
 
+        & > button{
+            padding: 5px 8px;
+            font-size: 0.5rem;
+            margin-left: 5px;
+        }
+    }
+    .like_dislike_btns_box{
+        display: none;
+    }
+    .videoPlayer_description{
+        margin-top: 10px;
+        padding: 5px;
+        font-size: 0.5rem;
+    }
+}
+@media (max-width: 1024px) and (max-height: 600px){
+    .videoPlayer_video_box{
+        height: 60vh;
+    }
+    .videoPlayer_title{
+        font-size: 1.5rem;
+    }
+    .videoPlayer_details_comments_box{
+        width: 65vw;
+    }
+    .like_dislike_btns_box{
+        display: flex;
+
+         & > div{
+            height: 50%;
+        }
+    }
 }
 @media (max-height: 450px) and (orientation: landscape){
-
+    .videoPlayer_details_comments_box{
+        width: 100vw;
+        padding: 1% 2%; 
+    }
+    .videoPlayer_title{
+        font-size: 1rem;
+    }
+    .videoPlayer_channel_icon_name_like{
+        height: 14vh;
+    }
+    .videoPlayer_channel{
+        font-size: 1rem;
+        & > img{
+            margin-right: 10px;
+        }
+        & > button{
+            padding: 5px 10px;
+            font-size: 0.7rem;
+            margin-left: 10px;
+        }
+    }
+    .like_dislike_btns_box{
+        height: 55%;
+        width: 15vw;
+ 
+    }
+    .like_btn_box{
+        font-size: 0.8rem;
+    }
 }

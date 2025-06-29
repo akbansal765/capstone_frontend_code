@@ -151,8 +151,8 @@ function Comments({comments, videoId}){
                                     {isEdit && <button onClick={handleSaveEditedComment} disabled={!isUserTyping} className={`add_comment ${isUserTyping ? 'user_typing' : 'user_not_typing'}`}>Save</button>}
                                </div>}
             <div ref={commentsContainer} className="comment_main_container">
-               {comments?.map(comment => {
-                return <div className="comment_container" key={comment?._id} id={comment._id}>
+               {comments?.map((comment, i) => {
+                return <div className="comment_container" key={comment?._id || i} id={comment._id}>
                             <div className="comment_user_icon_box">
                                 <div className="user_icon">
                                     <p>{comment?.userName?.slice(0, 1)}</p>

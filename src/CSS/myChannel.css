@@ -242,17 +242,409 @@
 
 /* ///////////  MEDIA QUERIES //////////// */
 @media (max-width: 1024px){
-
+    .channel_content_container{
+        height: 93vh;
+    }
+    .channel_banner_box{
+        width: 70vw;
+        min-height: 12vh;
+        margin-bottom: 15px;
+        font-size: 2.5rem;
+        border-radius: 20px;
+    }
+    .channel_details_box{
+        width: 70vw;
+        min-height: 12vh;
+        margin-bottom: 15px;
+    }
+    .channel_logo_box{
+        width: 12vh;
+        height: 12vh;
+        font-size: 8vh;
+    }
+    .channel_name_desc_box{
+        width: 52vw;
+        height: 7vh;
+    }
+    .myChannel_name{
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+    .myChannel_handle_subs_totalVidoes{
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+    .myChannel_description{
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    .myChannel_manageChannel_btns{
+        & > button{
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            border-radius: 1.5rem;
+        }
+    }
+    .channel_buttons_box{
+        min-height: 5vh;
+        margin-bottom: 15px;
+    }
+    .channel_buttons{
+        width: 70vw;
+        & > button{
+            font-size: 1rem;
+            margin-right: 20px;
+            padding: 0 4px;
+        }
+    }
+    .channel_videos_container{
+        width: 70vw;
+        min-height: 63vh;
+        margin-bottom: 10%;
+    }
+    .myChannel_video_component{
+        width: 47%;
+        height: 30%;
+    }
+    .myChannel_video_title{
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    .myChannel_views_and_edit_delete_video_box{
+        & span{
+            font-size: 0.8rem;
+        }
+        & > div > button{
+            padding: 4px 8px;
+            font-size: 0.8rem;
+        }
+    }
 }
 @media (max-width: 768px){
-
-}
-@media (max-width: 640px){
-
+    .channel_content_container{
+        height: 93vh;
+    }
+    .channel_banner_box{
+        width: 70vw;
+        min-height: 12vh;
+        margin-bottom: 15px;
+        font-size: 2.5rem;
+        border-radius: 10px;
+    }
+    .channel_details_box{
+        width: 70vw;
+        min-height: 12vh;
+        margin-bottom: 15px;
+    }
+    .channel_logo_box{
+        width: 12vh;
+        height: 12vh;
+        font-size: 8vh;
+    }
+    .channel_name_desc_box{
+        width: 52vw;
+        height: 7vh;
+    }
+    .myChannel_name{
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    .myChannel_handle_subs_totalVidoes{
+        font-size: 0.5rem;
+        margin-bottom: 10px;
+    }
+    .myChannel_description{
+        font-size: 0.6rem;
+        margin-bottom: 10px;
+    }
+    .myChannel_manageChannel_btns{
+        & > button{
+            padding: 8px 15px;
+            font-size: 0.7rem;
+            margin-right: 10px;
+            border-radius: 1.5rem;
+        }
+    }
+    .channel_buttons_box{
+        min-height: 5vh;
+        margin-bottom: 15px;
+    }
+    .channel_buttons{
+        width: 70vw;
+        & > button{
+            font-size: 0.8rem;
+            margin-right: 5px;
+            padding: 0 4px;
+        }
+    }
+    .channel_videos_container{
+        width: 70vw;
+        min-height: 63vh;
+        margin-bottom: 10%;
+    }
+    .myChannel_video_component{
+        width: 47%;
+        height: 30%;
+    }
+    .myChannel_video_title{
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+    .myChannel_views_and_edit_delete_video_box{
+        & span{
+            font-size: 0.6rem;
+        }
+        & > div > button{
+            padding: 4px 8px;
+            font-size: 0.6rem;
+        }
+    }
 }
 @media (max-width: 475px){
+    .channel_content_container{
+        height: 93vh;
+    }
+    .channel_banner_box{
+        width: 70vw;
+        min-height: 10vh;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+    }
+    .channel_details_box{
+        width: 70vw;
+        min-height: 10vh;
+        margin-bottom: 15px;
+    }
+    .channel_logo_box{
+        width: 10vh;
+        height: 10vh;
+        font-size: 6vh;
+    }
+    .channel_name_desc_box{
+        width: 50vw;
+        height: 5vh;
+    }
+    .myChannel_name{
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+    .myChannel_handle_subs_totalVidoes{
+        font-size: 0.4rem;
+        margin-bottom: 5px;
+    }
+    .myChannel_description{
+        font-size: 0.4rem;
+        margin-bottom: 1px;
+    }
+    .myChannel_manageChannel_btns{
+        & > button{
+            padding: 4px 9px;
+            font-size: 0.4rem;
+            margin-right: 10px;
+            border-radius: 1.5rem;
+        }
+    }
+    .channel_buttons_box{
+        min-height: 4vh;
+        margin-bottom: 15px;
+    }
+    .channel_buttons{
+        width: 70vw;
+        & > button{
+            font-size: 0.5rem;
+            margin-right: 5px;
+            padding: 0 4px;
+        }
+    }
+    .channel_videos_container{
+        width: 70vw;
+        min-height: 63vh;
+    }
+    .myChannel_video_component{
+        width: 47%;
+        height: 25%;
 
+        & span, & .channel_name{
+            font-size: 0.5rem;
+            color: white;
+        }
+    }
+    .myChannel_video_details_box{
+        margin-top: 0;
+    }
+    .myChannel_video_title{
+        font-size: 0.4rem;
+        margin-bottom: 0;
+    }
+    .myChannel_views_and_edit_delete_video_box{
+        & span{
+            font-size: 0.3rem;
+        }
+        & > div > button{
+            padding: 2px 4px;
+            font-size: 0.4rem;
+        }
+    }
+}
+@media (max-width: 1024px) and (max-height: 600px){
+    .channel_content_container{
+        height: 93vh;
+    }
+    .channel_banner_box{
+        width: 70vw;
+        min-height: 25vh;
+        margin-bottom: 15px;
+        font-size: 3.5rem;
+        border-radius: 20px;
+    }
+    .channel_details_box{
+        width: 70vw;
+        min-height: 25vh;
+        margin-bottom: 35px;
+    }
+    .channel_logo_box{
+        width: 25vh;
+        height: 25vh;
+        font-size: 15vh;
+    }
+    .channel_name_desc_box{
+        width: 53vw;
+        height: 13vh;
+    }
+    .myChannel_name{
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+    .myChannel_handle_subs_totalVidoes{
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+    .myChannel_description{
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    .myChannel_manageChannel_btns{
+        & > button{
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            border-radius: 1.5rem;
+        }
+    }
+    .channel_buttons_box{
+        min-height: 10vh;
+        margin-bottom: 25px;
+    }
+    .channel_buttons{
+        width: 70vw;
+        & > button{
+            font-size: 1rem;
+            margin-right: 20px;
+            padding: 0 4px;
+        }
+    }
+    .channel_videos_container{
+        width: 70vw;
+        min-height: 60vh;
+        margin-bottom: 10%;
+    }
+    .myChannel_video_component{
+        width: 31%;
+        height: 52%;
+    }
+    .myChannel_video_title{
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    .myChannel_views_and_edit_delete_video_box{
+        & span{
+            font-size: 0.8rem;
+        }
+        & > div > button{
+            padding: 4px 8px;
+            font-size: 0.8rem;
+        }
+    }
 }
 @media (max-height: 450px) and (orientation: landscape){
-
+    .channel_content_container{
+        height: 93vh;
+    }
+    .channel_banner_box{
+        width: 70vw;
+        min-height: 30vh;
+        margin-bottom: 15px;
+        font-size: 3rem;
+        border-radius: 20px;
+    }
+    .channel_details_box{
+        width: 70vw;
+        min-height: 30vh;
+        margin-bottom: 35px;
+    }
+    .channel_logo_box{
+        width: 30vh;
+        height: 30vh;
+        font-size: 20vh;
+    }
+    .channel_name_desc_box{
+        width: 51vw;
+        height: 15vh;
+    }
+    .myChannel_name{
+        font-size: 2rem;
+        margin-bottom: 2px;
+    }
+    .myChannel_handle_subs_totalVidoes{
+        font-size: 0.6rem;
+        margin-bottom: 10px;
+    }
+    .myChannel_description{
+        font-size: 0.6rem;
+        margin-bottom: 10px;
+    }
+    .myChannel_manageChannel_btns{
+        & > button{
+            padding: 5px 12px;
+            font-size: 0.6rem;
+            margin-right: 10px;
+            border-radius: 1.5rem;
+        }
+    }
+    .channel_buttons_box{
+        min-height: 12vh;
+        margin-bottom: 25px;
+    }
+    .channel_buttons{
+        width: 70vw;
+        & > button{
+            font-size: 0.8rem;
+            margin-right: 20px;
+            padding: 0 4px;
+        }
+    }
+    .channel_videos_container{
+        width: 70vw;
+        min-height: 60vh;
+        margin-bottom: 20%;
+    }
+    .myChannel_video_component{
+        width: 47%;
+        height: 75%;
+    }
+    .myChannel_video_title{
+        font-size: 0.7rem;
+        margin-bottom: 0;
+    }
+    .myChannel_views_and_edit_delete_video_box{
+        & span{
+            font-size: 0.6rem;
+        }
+        & > div > button{
+            padding: 4px 8px;
+            font-size: 0.6rem;
+        }
+    }
 }

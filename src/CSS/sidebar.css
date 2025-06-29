@@ -33,17 +33,71 @@
 
 /* ///////////  MEDIA QUERIES //////////// */
 @media (max-width: 1024px){
+    .sidebar_component{
+        height: 93vh;
+        width: 12%;
+        padding-left: 5px;
 
+        & button{
+            width: 60%;
+            height: 8%;
+        }
+    }
 }
 @media (max-width: 768px){
+    .sidebar_component{
+        height: 93vh;
+        width: 12%;
+        padding-left: 5px;
 
-}
-@media (max-width: 640px){
-
+        & button{
+            width: 60%;
+            height: 8%;
+            & > p{
+                font-size: 0.5rem;
+            }
+        }
+    }
 }
 @media (max-width: 475px){
+    .sidebar_component{
+        height: 93vh;
+        width: 12%;
+        padding-left: 5px;
 
+        & button{
+            width: 60%;
+            height: 8%;
+            & > p{
+                font-size: 0.3rem;
+            }
+        }
+    }
+}
+@media (max-width: 1024px) and (max-height: 600px){
+     .sidebar_component{
+        width: 8%;
+
+        & button{
+            width: 80%;
+            height: 10%;
+            & > p{
+                font-size: 0.5rem;
+            }
+        }
+    }
 }
 @media (max-height: 450px) and (orientation: landscape){
+     .sidebar_component{
+        height: 86vh;
+        width: 8%;
 
+        & button{
+            width: 80%;
+            height: 10%;
+            & > p{
+                font-size: 0.4rem;
+            }
+        }
+    }
 }

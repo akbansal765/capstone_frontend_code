@@ -164,17 +164,200 @@
 
 /* ///////////  MEDIA QUERIES //////////// */
 @media (max-width: 1024px){
+    .comments_component{
+        & > p{
+            font-size: 2rem;
+        }
+    }
+    .user_icon{
+        height: 5vh;
+        width: 5vh;
+        margin-right: 20px;
+        font-size: 2.5vh;
+    }
+    .comment_username_timestamp{
+        gap: 20px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .comment_like_dislike_reply_btns{
+        width: 25vw;
+        height: 3vh;
+        & > .comment_like_dislike_reply_buttons_box{
+            min-width: 13vw;
 
+            & > p{
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+        }
+        & > .comment_like_dislike_reply_buttons_box > button{
+            height: 3vh;
+            width: 3vh;
+        }
+    }
+    .edit_and_delete_user_comment{
+        height: 100%;
+        width: 8vw;
+        margin-left: 8px;
+
+        & > button{
+            height: 3vh;
+            width: 3vh;
+        }
+    }
 }
 @media (max-width: 768px){
+    .comments_component{
+        & > p{
+            font-size: 1.1rem;
+        }
+    }
+    .addComment_input{
+        margin: 20px 0;
+        padding: 7px 0;
+        font-size: 0.7rem;
+    }
+    .cancel_addComment_buttons_box{
+        margin-top: 5px;
+        & > button{
+            padding: 5px 10px;
+            font-size: 0.6rem;
+        }
+    }
+    .user_icon{
+        height: 5vh;
+        width: 5vh;
+        margin-right: 10px;
+        font-size: 2.5vh;
+    }
+    .comment_username_timestamp{
+        gap: 10px;
+        font-size: 0.7rem;
+        margin-bottom: 5px;
+    }
+    .comment_text{
+        font-size: 0.8rem;
+    }
+    .comment_like_dislike_reply_btns{
+        width: 25vw;
+        height: 3vh;
+        & > .comment_like_dislike_reply_buttons_box{
+            min-width: 15vw;
 
-}
-@media (max-width: 640px){
+            & > p{
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+        }
+        & > .comment_like_dislike_reply_buttons_box > button{
+            height: 3vh;
+            width: 3vh;
+        }
+    }
+    .edit_and_delete_user_comment{
+        height: 100%;
+        width: 8vw;
+        margin-left: 8px;
 
+        & > button{
+            height: 3vh;
+            width: 3vh;
+        }
+    }
 }
 @media (max-width: 475px){
+    .comments_component{
+        & > p{
+            font-size: 1.1rem;
+        }
+    }
+    .addComment_input{
+        margin: 20px 0;
+        padding: 7px 0;
+        font-size: 0.7rem;
+    }
+    .cancel_addComment_buttons_box{
+        margin-top: 5px;
+        & > button{
+            padding: 5px 10px;
+            font-size: 0.6rem;
+        }
+    }
+    .user_icon{
+        height: 5vh;
+        width: 5vh;
+        margin-right: 10px;
+        font-size: 2.5vh;
+    }
+    .comment_username_timestamp{
+        gap: 10px;
+        font-size: 0.7rem;
+        margin-bottom: 5px;
+    }
+    .comment_text{
+        font-size: 0.8rem;
+    }
+    .comment_like_dislike_reply_btns{
+        width: 32vw;
+        height: 3vh;
+        & > .comment_like_dislike_reply_buttons_box{
+            width: 25vw;
 
+            & > p{
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+        }
+        & > .comment_like_dislike_reply_buttons_box > button{
+            height: 3vh;
+            width: 3vh;
+        }
+    }
+    .edit_and_delete_user_comment{
+        height: 100%;
+        width: 8vw;
+        margin-left: 8px;
+
+        & > button{
+            height: 3vh;
+            width: 3vh;
+        }
+    }
+}
+@media (max-width: 1024px) and (max-height: 600px){
+    .comment_like_dislike_reply_btns{
+        max-width: 12vw;
+        & > .comment_like_dislike_reply_buttons_box{
+            min-width: 8vw;
+        }
+    }
 }
 @media (max-height: 450px) and (orientation: landscape){
+    .comment_like_dislike_reply_btns{
+        width: 25vw;
+        height: 4vh;
+        & > .comment_like_dislike_reply_buttons_box{
+            min-width: 13vw;
 
+            & > p{
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+        }
+        & > .comment_like_dislike_reply_buttons_box > button{
+            height: 4vh;
+            width: 4h;
+        }
+    }
+    .edit_and_delete_user_comment{
+        height: 100%;
+        width: 8vw;
+        margin-left: 8px;
+
+        & > button{
+            height: 4vh;
+            width: 4vh;
+        }
+    }
 }

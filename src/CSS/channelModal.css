@@ -49,14 +49,6 @@
   margin-bottom: 10px;
 }
 
-.select-picture {
-  background: none;
-  border: none;
-  color: #66aaff;
-  font-weight: 500;
-  cursor: pointer;
-}
-
 .modal-inputs input {
   width: 100%;
   padding: 12px 14px;
@@ -122,18 +114,35 @@
 
 
 /* ///////////  MEDIA QUERIES //////////// */
-@media (max-width: 1024px){
-
-}
-@media (max-width: 768px){
-
-}
-@media (max-width: 640px){
-
-}
-@media (max-width: 475px){
-
-}
 @media (max-height: 450px) and (orientation: landscape){
-
+  .modal-container {
+    max-height: 350px;
+    max-width: 400px;
+    padding: 20px;
+  }
+  .modal-heading {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  .modal-avatar {
+    margin-bottom: 15px;
+  }
+  .avatar-placeholder {
+    width: 65px;
+    height: 65px;
+    font-size: 30px;
+    margin-bottom:5px;
+  }
+  .modal-inputs input {
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .cancel-btn {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+  .create-btn {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
 }

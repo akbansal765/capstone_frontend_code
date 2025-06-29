@@ -125,7 +125,7 @@ function MyChannel({isSliderbarVisible, isUserLoggedIn}){
               }
               </div>
               {channelVideos?.map((video, index) => {
-                  return <ChannelVideo video={video} channelId={channel._id} handleAddVideosBtnOnDelete={handleAddVideosBtnOnDelete}/>
+                  return <ChannelVideo video={video} channelId={channel._id} key={index} handleAddVideosBtnOnDelete={handleAddVideosBtnOnDelete}/>
               })}
             </div>
           </div>}
