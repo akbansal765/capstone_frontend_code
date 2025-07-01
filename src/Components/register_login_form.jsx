@@ -18,6 +18,7 @@ function RegisterLoginForm({setUserLoggedIn}) {
       return;
     }
 
+    //saving the new registered user in the database
     try{
       const response = await fetch("http://localhost:5050/register", {
         method: "POST",
@@ -28,8 +29,6 @@ function RegisterLoginForm({setUserLoggedIn}) {
         })
 
         const data = await response.json();
-        console.log(response);
-        console.log(data);
         if(response.ok){
           alert("User has been registered! Kindly log in to the website!!")
           setIsLogin(true);
@@ -69,9 +68,9 @@ function RegisterLoginForm({setUserLoggedIn}) {
         
         if(response.ok){
           localStorage.setItem("LoggedInUserData", JSON.stringify(data));
+          //if user is successfully logged in navigate them to homepage
           navigate("/");
           setUserLoggedIn(true);
-          console.log('hello')
         }else{
           alert(data.message);
         }
@@ -81,6 +80,7 @@ function RegisterLoginForm({setUserLoggedIn}) {
   };
 
 
+  //navigate the user to homepage after closing the registerLogin component
   function handleClose() {
     navigate("/");
   }

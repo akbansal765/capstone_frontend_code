@@ -4,53 +4,65 @@ import editComment from '../assets/icons/edit.png';
 import deleteComment from '../assets/icons/delete.png';
 import { useEffect, useRef, useState } from 'react';
 
-function Comments({comments, videoId}){
+function Comments({comments, setComments, videoId, isUserLoggedIn}){
     const [isInputFocused, setInputFoucused] = useState(false);
     const [isUserTyping, setUserTyping] = useState(false);
     const [inputValue, setInputValue] = useState("");
     const [isEdit, setEdit] = useState(false);
     const [commentId, setCommentId] = useState(""); // this is set only when user click on the edit button
 
+    // using useRef for the scroll to add comment input element
     const commentComponent = useRef(null);
-    const commentsContainer = useRef(null);
  
     // cancel and comment buttons will appear
     function handleOnFocusEvent(){
         setInputFoucused(true);
     }
-
+    
+    //adding new comment
     async function handleAddComment(){
         const comment = {
             text: inputValue,
-            userName: JSON.parse(localStorage.getItem("LoggedInUserData"))?.username || "Guest User",
+            userName: JSON.parse(localStorage.getItem("LoggedInUserData"))?.username,
             internalUser: true
         };
-        comments.unshift(comment);
-        console.log(comments);
 
-        try{
+        //adding comment in database
+        if(isUserLoggedIn){
+            try{
             const response = await fetch(`http://localhost:5050/comment/${videoId}`, {
                 method: "POST",
                 headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "authorization": `JWT ${JSON.parse(localStorage.getItem("LoggedInUserData"))?.accessToken}`
                 },
                 body: JSON.stringify(comment)
             })
             
             const data = await response.json();
             if(response.ok){
-                alert("Comment has been added!")
+                //adding comment in DOM 
+                setComments(prev => [comment, ...prev]);
+                alert("Comment has been added!");
             }else{
-                alert(data.message);
+                if(data.message == 'TOKEN NOT FOUND!'){
+                    alert("Kindly Login First to add a comment!!")
+                }else{
+                    alert(data.message);
+                }
             }
         }catch(err){
             console.log(err.message);
+        }
+        }else{
+            alert("Kindly Login First to add a comment!!");
         }
         
         setInputFoucused(false);
         setInputValue("");
     }
 
+    // changing of states after pressing the cancel button on adding comment section
     function handleCancelComment(){
         setInputFoucused(false);
         setUserTyping(false);
@@ -62,7 +74,8 @@ function Comments({comments, videoId}){
         setInputValue(e.target.value);
         setUserTyping(true);
     }
-
+    
+    // handlnig editing comment on DOM
     function handleEditComment(comment){
         setInputValue(comment.text);
         setCommentId(comment._id);
@@ -73,11 +86,15 @@ function Comments({comments, videoId}){
         commentComponent.current?.scrollIntoView({behavior: "smooth"});
     }
 
+    // saving the edited comment in the database and DOM
     async function handleSaveEditedComment(){
         const comment = {
             text: inputValue,
         };
 
+        console.log(comments)
+
+        //saving comment in database
         try{
             const response = await fetch(`http://localhost:5050/comment/${commentId}`, {
                 method: "PUT",
@@ -88,13 +105,20 @@ function Comments({comments, videoId}){
             })
             
             const data = await response.json();
-            console.log(data);
             if(response.ok){
-                const allComments = [...commentsContainer.current.childNodes]
-                const commentContainer = allComments.find(el => el.id == commentId);
-                const comment = commentContainer.querySelector(".comment_text");
-                comment.innerText = inputValue;
-                
+                //updating the edited and saved comment on DOM
+                setComments(prev => {
+                    const updatedComment = prev.find(comment => comment._id === commentId);
+                    if (!updatedComment) return prev;
+
+                    const newComment = { ...updatedComment, text: inputValue }; // new object and overwriting the text with new input value rather than directly mutating it
+                    const remaining = prev.filter(comment => comment._id !== commentId);
+                    return [newComment, ...remaining]; // reordered, no mutation
+                });
+
+                //short method
+                // setComments(prev => prev.map(comment => comment._id == commentId ? {...comment, text: inputValue} : comment));
+
                 alert(data.message);
             }else{
                 alert(data.message);
@@ -109,6 +133,7 @@ function Comments({comments, videoId}){
     }
     
     async function handleDeleteComment(id){
+        //deleting comment from database
         try{
             const response = await fetch(`http://localhost:5050/comment/${id}`, {
                 method: "DELETE",
@@ -118,18 +143,15 @@ function Comments({comments, videoId}){
             })
             
             const data = await response.json();
-            console.log(data);
             if(response.ok){
-                const allComments = [...commentsContainer.current.childNodes]
-                const commentContainer = allComments.find(el => el.id == id);
-                commentContainer.remove();
-                
+                //deleting comment in DOM
+                setComments(prev => prev.filter(comment => comment._id != id));
                 alert(data.message);
             }else{
                 alert(data.message);
             }
         }catch(err){
-            console.log(err.message)
+            console.log(err.message);
         }
     };
 
@@ -150,7 +172,7 @@ function Comments({comments, videoId}){
                                     {!isEdit &&<button onClick={handleAddComment} disabled={!isUserTyping} className={`add_comment ${isUserTyping ? 'user_typing' : 'user_not_typing'}`}>Comment</button>}
                                     {isEdit && <button onClick={handleSaveEditedComment} disabled={!isUserTyping} className={`add_comment ${isUserTyping ? 'user_typing' : 'user_not_typing'}`}>Save</button>}
                                </div>}
-            <div ref={commentsContainer} className="comment_main_container">
+            <div className="comment_main_container">
                {comments?.map((comment, i) => {
                 return <div className="comment_container" key={comment?._id || i} id={comment._id}>
                             <div className="comment_user_icon_box">
@@ -176,7 +198,7 @@ function Comments({comments, videoId}){
                                         <p>Reply</p>
                                     </div>
 
-                                    {comment?.internalUser && <div className="edit_and_delete_user_comment">
+                                    {isUserLoggedIn && comment?.internalUser && <div className="edit_and_delete_user_comment">
                                                                 <button onClick={() => handleEditComment(comment)} className="edit_comment">
                                                                     <img src={editComment} alt="edit comment" />
                                                                 </button>

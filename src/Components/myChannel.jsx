@@ -7,19 +7,14 @@ import { useEffect, useState } from "react";
 
 function MyChannel({isSliderbarVisible, isUserLoggedIn}){
 
+    // getting the channle id from route parameters
     const params = useParams();
     const [channel, setChannel] = useState(null);
     const [channelVideos, setChannelVideos] = useState([]);
-
     const [showAddVideosBtn, setShowAddVideosBtn] = useState(false);
 
-    function handleAddVideosBtnOnDelete(videoCount){
-        if(videoCount == 0){
-          setShowAddVideosBtn(true)
-        }
-    }
-
     async function handleAddVidoesChannelBtn(id){
+      //saving the dummy channle videos to a specific channel, data is present in the backend folder
       try{
         const response = await fetch(`http://localhost:5050/channelVideos/${id}`,{
             method: "POST"
@@ -28,8 +23,8 @@ function MyChannel({isSliderbarVisible, isUserLoggedIn}){
         const data = await response.json();
 
         if(response.ok){
+          // showing videos on DOM
           setChannelVideos(data);
-          console.log(data)
         }else{
           alert(data.message);
         }
@@ -39,7 +34,13 @@ function MyChannel({isSliderbarVisible, isUserLoggedIn}){
       }
     }
 
+    // fetching the channel data when user logs in and go to channel page
     useEffect(() => {
+
+      //clear old state immediately
+      // setChannelVideos([])
+      // setChannel(null);
+      
       if(isUserLoggedIn && params.id){
         async function fetchChannel(){
           try{
@@ -47,11 +48,9 @@ function MyChannel({isSliderbarVisible, isUserLoggedIn}){
             const data = await response.json();            
             if(response.ok){
               setChannel(data);
-              if(data.channelVideos?.length > 0){
-                setChannelVideos(data.channelVideos)
-              }
+              setChannelVideos(data.channelVideos);
             }else{
-              alert("Unable to fetch channel, kindly try again later!!");
+              alert(data.message);
             }
           }catch(err){
             console.log(err.message);
@@ -59,7 +58,7 @@ function MyChannel({isSliderbarVisible, isUserLoggedIn}){
         }
         fetchChannel();
        }
-    }, [params]);
+    }, [params.id]);
 
     // useEffect for the add videos button
     useEffect(() => {
@@ -83,17 +82,17 @@ function MyChannel({isSliderbarVisible, isUserLoggedIn}){
 
             <div className="channel_details_box">
                 <div className="channel_logo_box">
-                  <p>T</p>
+                  <p>{channel?.channelName?.slice(0, 1)}</p>
                 </div>
                 <div className="channel_name_desc_box">
                   <p className="myChannel_name">{channel?.channelName}.</p>
 
                   <div className="myChannel_handle_subs_totalVidoes">
-                    <p className="myChannelHandle">@{channel?.channelHandle}</p>
+                    <p className="myChannelHandle">{channel?.channelHandle}</p>
                     <span>&nbsp;&middot;&nbsp;</span>
                     <p className="myChannel_subsribers">30M Subscribers</p>
                     <span>&nbsp;&middot;&nbsp;</span>
-                    <p className="myChannel_totalVidoes">{channel?.videos?.length ? channel.videos.length : 0} Vidoes</p>
+                    <p className="myChannel_totalVidoes">{channelVideos?.length} Videos</p>
                   </div>
 
                   <p className="myChannel_description">Welcome to our channel, your go-to destination for exciting videos across tech, entertainment, and lifestyle.</p>
@@ -124,8 +123,8 @@ function MyChannel({isSliderbarVisible, isUserLoggedIn}){
                                           </div>
               }
               </div>
-              {channelVideos?.map((video, index) => {
-                  return <ChannelVideo video={video} channelId={channel._id} key={index} handleAddVideosBtnOnDelete={handleAddVideosBtnOnDelete}/>
+              {channelVideos?.map((video) => {
+                  return <ChannelVideo video={video} channelId={channel._id} key={video._id} setChannelVideos={setChannelVideos}/>
               })}
             </div>
           </div>}

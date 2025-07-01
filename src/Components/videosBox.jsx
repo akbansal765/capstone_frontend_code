@@ -4,9 +4,8 @@ function VideosBox({displayVideos}){
    
    const navigate = useNavigate();
 
+   //passing the video id in route parameters
    function handleVideo(obj){
-    //  const video = displayVideos.find(video => video._id == obj._id);
-    //  navigate(`/videoPlayer`, {state : {video}})
         navigate(`/videoPlayer/${obj._id}`)
    }
 

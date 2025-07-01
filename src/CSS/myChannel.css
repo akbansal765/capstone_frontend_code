@@ -487,6 +487,10 @@
             font-size: 0.4rem;
         }
     }
+    .myChannel_addVideos_btn{
+        font-size: 0.6rem;
+        padding: 5px 10px;
+    }
 }
 @media (max-width: 1024px) and (max-height: 600px){
     .channel_content_container{
@@ -646,5 +650,9 @@
             padding: 4px 8px;
             font-size: 0.6rem;
         }
+    }
+    .myChannel_addVideos_btn{
+        font-size: 0.8rem;
+        padding: 5px 10px;
     }
 }

@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 function FilterButtons({videos, setDisplayVideos}){
   
     const categories = [
@@ -21,6 +19,7 @@ function FilterButtons({videos, setDisplayVideos}){
 
     function handleFilterButton(category){
       const categoryVideos = videos.filter(video => video.category == category);
+      //displating the videos list based on category on homepage
       setDisplayVideos(categoryVideos);
     }
 

@@ -8,6 +8,7 @@
 @import url('./CSS/register_login.css');
 @import url('./CSS/channelModal.css');
 @import url('./CSS/myChannel.css');
+@import url('./CSS/errorElement.css');
 
 body{
   overflow-x: hidden;

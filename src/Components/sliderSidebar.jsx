@@ -6,8 +6,6 @@ import playlists from '../assets/icons/playlist.png';
 import yourVidoes from '../assets/icons/yourVideos.png';
 import yourMovies from '../assets/icons/video-editing.png';
 import yourCourses from '../assets/icons/learning.png';
-import watchLater from '../assets/icons/clock.png';
-import likedVidoes from '../assets/icons/like.png';
 import rightArrow from '../assets/icons/chevron.png';
 import channelIcon from '../assets/icons/television.png';
 import { useNavigate } from 'react-router-dom';
@@ -23,15 +21,18 @@ function SliderSidebar({isUserLoggedIn}){
         navigate('/');
     }
 
+    //passing the channel id to route paramters
     function handleOpenChannel(id){
         navigate(`/myChannel/${id}`);
     }
 
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("LoggedInUserData"));
-    setUserEmail(data.email);
-  }, []);
+    //getting user data from local storage and storing user email in state variable
+    useEffect(() => {
+      const data = JSON.parse(localStorage.getItem("LoggedInUserData"));
+      setUserEmail(data?.email);
+    }, []);
 
+    //fetch all the channels in the sliderbar if user is logged in
     useEffect(() => {
       if(isUserLoggedIn && userEmail){
         async function fetchChannels(){
@@ -94,14 +95,6 @@ function SliderSidebar({isUserLoggedIn}){
                 <img src={yourCourses} alt="your courses" />
                 <p>Your courses</p>
             </button>
-            {/* <button>
-                <img src={watchLater} alt="watch later" />
-                <p>Watch later</p>
-            </button>
-            <button>
-                <img src={likedVidoes} alt="liked videos" />
-                <p>Liked vidoes</p>
-            </button> */}
           </div>
 
           <div className="thirdBox_myChannels">

@@ -1,0 +1,126 @@
+/* Base styles for all devices */
+.error-container {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.error-icon {
+  font-size: 70px;
+  animation: bounce 1s infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  } 
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.error-title {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.error-message {
+  font-size: 18px;
+  color: #aaa;
+  max-width: 600px;
+  margin-bottom: 28px;
+  padding: 0 10px;
+}
+
+.home-button {
+  background-color: #ff0000;
+  color: white;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #cc0000;
+}
+
+/* Extra small devices (phones, < 480px) */
+@media screen and (max-width: 480px) {
+  .error-icon {
+    font-size: 50px;
+  }
+
+  .error-title {
+    font-size: 28px;
+  }
+
+  .error-message {
+    font-size: 15px;
+  }
+
+  .home-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Small devices (mobile landscape, Nest Hub, 481px to 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .error-icon {
+    font-size: 60px;
+  }
+
+  .error-title {
+    font-size: 34px;
+  }
+
+  .error-message {
+    font-size: 16px;
+  }
+
+  .home-button {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Medium devices (tablets, 768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .error-icon {
+    font-size: 65px;
+  }
+
+  .error-title {
+    font-size: 38px;
+  }
+
+  .error-message {
+    font-size: 17px;
+  }
+}
+
+/* Large devices (laptops and desktops, >1024px) */
+@media screen and (min-width: 1025px) {
+  .error-icon {
+    font-size: 75px;
+  }
+
+  .error-title {
+    font-size: 48px;
+  }
+
+  .error-message {
+    font-size: 18px;
+  }
+}

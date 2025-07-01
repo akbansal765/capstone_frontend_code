@@ -20,10 +20,12 @@ function Header({isUserLoggedIn, isSliderbarVisible, setSlidebarVisible, isVideo
       setViddeoPlayer(!isVideoPlayerOn);
     }
 
+    // naviating to loginRegister page after pressing sign in butotn
     function handleSignInButton(){
        navigate('/registerLogin')
     }
 
+    // open the create new channel modal after pressing the button
     function handleCreateChannelButton(){
       setChannelModal(true);
     }
@@ -32,11 +34,12 @@ function Header({isUserLoggedIn, isSliderbarVisible, setSlidebarVisible, isVideo
       const searchByTitleVideos = videos.filter(video => video.title.toLowerCase().includes(searchInput.toLowerCase()))
       setDisplayVideos(searchByTitleVideos);
     }
-
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("LoggedInUserData"));
-    setUser(data);
-  }, []);
+ 
+    // getting user data from local storage and storing the data in state variable
+    useEffect(() => {
+      const data = JSON.parse(localStorage.getItem("LoggedInUserData"));
+      setUser(data || null);
+    }, []);
     
 
     return (

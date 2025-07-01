@@ -1,35 +1,36 @@
 import likeIcon from '../assets/icons/like.png';
 import dislikeIcon from '../assets/icons/dislike.png';
 import Comments from './comments';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SliderSidebar from './sliderSidebar.jsx';
 import { useState, useEffect } from 'react';
 
 function VideoPlayer({isVideoPlayerOn, isUserLoggedIn}){
-    // const location = useLocation();
-    // const video = location.state?.video;
-    // const [videos, setVideos] = useState([]);
     const [video, setVideo] = useState(null);
+    const [comments, setComments] = useState([]);
 
+    //getting video id in route parameters
     const params = useParams();
-    // const video = videos.find(video => video._id == params.id);
 
     useEffect(() => {
       const fetchData = async () => {
         try {
-          // const response = await fetch("http://localhost:5050/videos");
           const response = await fetch(`http://localhost:5050/video/${params.id}`);
           const data = await response.json(); // fixed: added space between `await` and `response`
-          // setVideos(data);
-          setVideo(data)
-          console.log(data);
+          if(response.ok){
+            setVideo(data);
+            setComments(data?.comments);
+          }else{
+            alert(data.message);
+          }
+          
         } catch (err) {
           console.log(err.message);
         }
       };
     
       fetchData();
-    }, []);
+    }, [comments]);
 
     if (!video) {
       return <div className="loading">Loading video...</div>;
@@ -69,7 +70,8 @@ function VideoPlayer({isVideoPlayerOn, isUserLoggedIn}){
 
             <p className="videoPlayer_description">{video?.description}</p>
 
-            <Comments comments={video?.comments} videoId={video?._id}/>
+            {/* <Comments comments={video?.comments} videoId={video?._id} isUserLoggedIn={isUserLoggedIn}/> */}
+            <Comments comments={comments} setComments={setComments} videoId={video?._id} isUserLoggedIn={isUserLoggedIn}/>
 
           </div>
 

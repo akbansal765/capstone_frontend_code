@@ -5,8 +5,10 @@ function ChannelModal({setChannelModal}){
   const [handle, setHandle] = useState("");
   const [userEmail, setUserEmail] = useState("");
 
+  //creating channel in Database
   async function handleCreateChannel(e){
     e.preventDefault();
+    //getting data from new channle modal
     const channelDetails = {
       channelName: name,
       channelHandle: `@${handle}`
@@ -15,9 +17,8 @@ function ChannelModal({setChannelModal}){
     //clearing input fields after submission
     setName("");
     setHandle("");
-
+    // saving channel data in the backend
     try{
-        console.log(userEmail);
         const response = await fetch(`http://localhost:5050/channel/${userEmail}`, {
           method: "POST",
           headers: {
@@ -29,6 +30,7 @@ function ChannelModal({setChannelModal}){
 
         if(response.ok){
           alert(data.message);
+          //closing the modal after creating a channel
           setChannelModal(false)
         }else{
           alert(data.message);
@@ -39,6 +41,7 @@ function ChannelModal({setChannelModal}){
 
   }
 
+  //getting user data from local storage
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("LoggedInUserData"));
     setUserEmail(data.email);

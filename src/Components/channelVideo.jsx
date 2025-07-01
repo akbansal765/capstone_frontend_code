@@ -1,22 +1,19 @@
-import { useRef } from "react";
-
-function ChannelVideo({video, channelId, handleAddVideosBtnOnDelete}){
-    const channelVideo = useRef();
-
+function ChannelVideo({video, channelId, setChannelVideos}){
     async function handleDelChannelVideo(videoId){
-      // remove channel video from DOM
-      channelVideo.current?.remove();
+    
+    //removing the channelVideo from DOM by changing the state and re-rendering the compoent
+    setChannelVideos(prev => prev.filter(video => video.videoId != videoId));
 
+      // removing channel video from database
       try{
          const response = await fetch(`http://localhost:5050/channelVideo/${channelId}/${videoId}`, {
             method: "DELETE"
          });
          const data = await response.json();
          if(response.ok){
-            handleAddVideosBtnOnDelete(data.videoCount);
-            console.log(data.message);
+            alert(data.message)
          }else{
-            console.log(data.message);
+            alert(data.message)
          }
       }catch(err){
         console.log(err)
@@ -24,7 +21,7 @@ function ChannelVideo({video, channelId, handleAddVideosBtnOnDelete}){
     }
 
     return (
-        <div ref={channelVideo} className="myChannel_video_component">
+        <div className="myChannel_video_component">
             <div className="myChannel_thumbnail_box">
                 <img src={video?.thumbnailUrl} alt="video thumbnail" />
             </div>

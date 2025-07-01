@@ -2,14 +2,14 @@ import { StrictMode, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import VideoPlayer from './Components/videoPlayer.jsx';
 import MainContainer from './Components/mainContainer.jsx';
 import RegisterLoginForm from './Components/register_login_form.jsx';
 import MyChannel from './Components/myChannel.jsx';
+import ErrorPage from './Components/errorElement.jsx';
 
-
+// to make a central state converted the main.jsx to functional component
 function Root(){
   const [isSliderbarVisible, setSlidebarVisible] = useState(false);
   const [isVideoPlayerOn, setViddeoPlayer] = useState(false);
@@ -19,6 +19,7 @@ function Root(){
   const [videos, setVideos] = useState([]);
   const [displayVideos, setDisplayVideos] = useState([]);
   
+  //fetching all videos data in the homepage and storing the data in state variable
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -38,6 +39,7 @@ function Root(){
       {
         path: '/',
         element: <App isUserLoggedIn={isUserLoggedIn} isSliderbarVisible={isSliderbarVisible} setSlidebarVisible={setSlidebarVisible} isVideoPlayerOn={isVideoPlayerOn} setViddeoPlayer={setViddeoPlayer} videos={videos} setDisplayVideos={setDisplayVideos}/>,
+        errorElement: <ErrorPage/>,
         children: [
           {
             index: true,
@@ -65,7 +67,5 @@ function Root(){
       </StrictMode>
     )
 }
-
-
 
 createRoot(document.getElementById('root')).render(<Root />)
