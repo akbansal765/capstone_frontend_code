@@ -92,8 +92,6 @@ function Comments({comments, setComments, videoId, isUserLoggedIn}){
             text: inputValue,
         };
 
-        console.log(comments)
-
         //saving comment in database
         try{
             const response = await fetch(`http://localhost:5050/comment/${commentId}`, {
@@ -184,7 +182,7 @@ function Comments({comments, setComments, videoId, isUserLoggedIn}){
                             <div className="comment_box">
                                 <div className="comment_username_timestamp">
                                     <p className="comment_username">@{comment?.userName}</p>
-                                    <p className="comment_timestamps">{comment?.timestamp?.split("T")[0]}</p>
+                                    <p className="comment_timestamps">{comment?.updatedAt?.split("T")[0]}</p>
                                 </div>
                                 <p className="comment_text">{comment?.text}</p>
                                 <div className="comment_like_dislike_reply_btns">
