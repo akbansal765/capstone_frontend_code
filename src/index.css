@@ -9,6 +9,7 @@
 @import url('./CSS/channelModal.css');
 @import url('./CSS/myChannel.css');
 @import url('./CSS/errorElement.css');
+@import url('./CSS/loader.css');
 
 body{
   overflow-x: hidden;

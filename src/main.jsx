@@ -1,13 +1,17 @@
 import { StrictMode, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import VideoPlayer from './Components/videoPlayer.jsx';
-import MainContainer from './Components/mainContainer.jsx';
-import RegisterLoginForm from './Components/register_login_form.jsx';
-import MyChannel from './Components/myChannel.jsx';
 import ErrorPage from './Components/errorElement.jsx';
+import { lazy, Suspense } from 'react';
+import Loader from './Components/loader.jsx';
+
+// Lazy components
+const App = lazy(() => import("./App.jsx"));
+const MainContainer = lazy(() => import("./Components/mainContainer.jsx"));
+const RegisterLoginForm = lazy(() => import("./Components/register_login_form.jsx"));
+const MyChannel = lazy(() => import("./Components/myChannel.jsx"));
+const VideoPlayer = lazy(() => import("./Components/videoPlayer.jsx"));
 
 // to make a central state converted the main.jsx to functional component
 function Root(){
@@ -38,26 +42,26 @@ function Root(){
    const appRouter = createBrowserRouter([
       {
         path: '/',
-        element: <App isUserLoggedIn={isUserLoggedIn} isSliderbarVisible={isSliderbarVisible} setSlidebarVisible={setSlidebarVisible} isVideoPlayerOn={isVideoPlayerOn} setViddeoPlayer={setViddeoPlayer} videos={videos} setDisplayVideos={setDisplayVideos}/>,
+        element: <Suspense fallback={<Loader />}><App isUserLoggedIn={isUserLoggedIn} isSliderbarVisible={isSliderbarVisible} setSlidebarVisible={setSlidebarVisible} isVideoPlayerOn={isVideoPlayerOn} setViddeoPlayer={setViddeoPlayer} videos={videos} setDisplayVideos={setDisplayVideos}/></Suspense>,
         errorElement: <ErrorPage/>,
         children: [
           {
             index: true,
-            element: <MainContainer isSliderbarVisible={isSliderbarVisible} isUserLoggedIn={isUserLoggedIn} videos={videos} displayVideos={displayVideos} setDisplayVideos={setDisplayVideos}/>
+            element: <Suspense fallback={<Loader />}><MainContainer isSliderbarVisible={isSliderbarVisible} isUserLoggedIn={isUserLoggedIn} videos={videos} displayVideos={displayVideos} setDisplayVideos={setDisplayVideos}/></Suspense>
           },
           {
             path: '/videoPlayer/:id',
-            element: <VideoPlayer isVideoPlayerOn={isVideoPlayerOn} isUserLoggedIn={isUserLoggedIn}/>
+            element: <Suspense fallback={<Loader />}><VideoPlayer isVideoPlayerOn={isVideoPlayerOn} isUserLoggedIn={isUserLoggedIn}/></Suspense>
           },
           {
             path: '/myChannel/:id',
-            element: <MyChannel isSliderbarVisible={isSliderbarVisible} isUserLoggedIn={isUserLoggedIn} videos={videos}/>
+            element: <Suspense fallback={<Loader />}><MyChannel isSliderbarVisible={isSliderbarVisible} isUserLoggedIn={isUserLoggedIn} videos={videos}/></Suspense>
           }
         ]
       },
       {
         path: '/registerLogin',
-        element: <RegisterLoginForm setUserLoggedIn={setUserLoggedIn}/>
+        element: <Suspense fallback={<Loader />}><RegisterLoginForm setUserLoggedIn={setUserLoggedIn}/></Suspense>
       }
     ]);
 

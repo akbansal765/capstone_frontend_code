@@ -4,8 +4,12 @@ import searchIcon from '../assets/icons/search-interface-symbol.png';
 import micIcon from '../assets/icons/mic.png';
 import profileIcon from '../assets/icons/user.png';
 import { useNavigate } from 'react-router-dom';
-import ChannelModal from './channelModal';
 import { useEffect, useState } from 'react';
+import { lazy, Suspense } from 'react';
+import Loader from './loader';
+
+const ChannelModal = lazy(() => import('./channelModal'));
+
 
 function Header({isUserLoggedIn, isSliderbarVisible, setSlidebarVisible, isVideoPlayerOn, setViddeoPlayer, videos, setDisplayVideos}){
     
@@ -37,8 +41,8 @@ function Header({isUserLoggedIn, isSliderbarVisible, setSlidebarVisible, isVideo
  
     // getting user data from local storage and storing the data in state variable
     useEffect(() => {
-      const data = JSON.parse(localStorage.getItem("LoggedInUserData"));
-      setUser(data || null);
+      const data = JSON.parse(localStorage.getItem("LoggedInUserData") || "null");
+      setUser(data);
     }, []);
     
 
@@ -74,7 +78,11 @@ function Header({isUserLoggedIn, isSliderbarVisible, setSlidebarVisible, isVideo
                {isUserLoggedIn && <p className='welcome_message_after_login'>Welcome, {user?.username}</p>}
             </div>
         </div>
-        {channelModal && <ChannelModal setChannelModal={setChannelModal}/>}
+        {channelModal && (
+          <Suspense fallback={<Loader />}>
+            <ChannelModal setChannelModal={setChannelModal}/>
+          </Suspense>
+          )}
       </>
     )
 }

@@ -24,6 +24,7 @@ function Comments({comments, setComments, videoId, isUserLoggedIn}){
         const comment = {
             text: inputValue,
             userName: JSON.parse(localStorage.getItem("LoggedInUserData"))?.username,
+            userEmail: JSON.parse(localStorage.getItem("LoggedInUserData"))?.email,
             internalUser: true
         };
 
@@ -160,6 +161,8 @@ function Comments({comments, setComments, videoId, isUserLoggedIn}){
       }
     }, [inputValue]);
 
+    // getting data from Local Storage
+    const userData = JSON.parse(localStorage.getItem("LoggedInUserData") || "null");
 
     return (
         <div className="comments_component" ref={commentComponent}>
@@ -196,7 +199,7 @@ function Comments({comments, setComments, videoId, isUserLoggedIn}){
                                         <p>Reply</p>
                                     </div>
 
-                                    {isUserLoggedIn && comment?.internalUser && <div className="edit_and_delete_user_comment">
+                                    {isUserLoggedIn && comment?.internalUser && (comment?.userEmail == userData?.email) && <div className="edit_and_delete_user_comment">
                                                                 <button onClick={() => handleEditComment(comment)} className="edit_comment">
                                                                     <img src={editComment} alt="edit comment" />
                                                                 </button>

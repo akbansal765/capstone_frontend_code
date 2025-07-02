@@ -1,9 +1,14 @@
 import likeIcon from '../assets/icons/like.png';
 import dislikeIcon from '../assets/icons/dislike.png';
-import Comments from './comments';
 import { useParams } from 'react-router-dom';
 import SliderSidebar from './sliderSidebar.jsx';
 import { useState, useEffect } from 'react';
+import { lazy, Suspense } from 'react';
+import Loader from './loader.jsx';
+
+const Comments = lazy(() => import('./comments'));
+
+
 
 function VideoPlayer({isVideoPlayerOn, isUserLoggedIn}){
     const [video, setVideo] = useState(null);
@@ -69,9 +74,10 @@ function VideoPlayer({isVideoPlayerOn, isUserLoggedIn}){
             </div>
 
             <p className="videoPlayer_description">{video?.description}</p>
-
-            {/* <Comments comments={video?.comments} videoId={video?._id} isUserLoggedIn={isUserLoggedIn}/> */}
-            <Comments comments={comments} setComments={setComments} videoId={video?._id} isUserLoggedIn={isUserLoggedIn}/>
+            
+            <Suspense fallback={<Loader />}>
+              <Comments comments={comments} setComments={setComments} videoId={video?._id} isUserLoggedIn={isUserLoggedIn}/>
+            </Suspense>
 
           </div>
 

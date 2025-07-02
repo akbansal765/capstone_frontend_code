@@ -4,7 +4,9 @@ A full-stack video streaming platform inspired by YouTube. This project lets use
 
 ---
 
-## DEMO VIDEO LINK : https://drive.google.com/file/d/14J3QnRYDBL193_Kqls6BcLoRiaH4myZV/view?usp=sharing
+## Demo Video Link : https://drive.google.com/file/d/14J3QnRYDBL193_Kqls6BcLoRiaH4myZV/view?usp=sharing
+## GitHub Frontend Repo : https://github.com/akbansal765/capstone_frontend_code
+## GitHub Backend Repo : https://github.com/akbansal765/capstone_backend_code
 
 
 ## 🚀 Features
@@ -37,8 +39,9 @@ A full-stack video streaming platform inspired by YouTube. This project lets use
 - Upload, edit, delete videos tied to a channel
 - View videos uploaded by a specific channel
 
-### 📱 Responsive Design
+### 📱 Responsive Design and Performace enhancement
 - Optimized layout for desktops, tablets, mobiles, and landscape orientations
+- Implemented Lazy Loading to improve efficiency of the code
 
 ---
 
